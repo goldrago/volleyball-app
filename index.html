@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כדורעף - הגרלת קבוצות והיסטוריה</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🏐 כדורעף - הגרלת קבוצות</h1>
+
+        <nav class="nav-tabs">
+            <button id="drawTabBtn" class="tab-btn active">הגרלה</button>
+            <button id="archiveTabBtn" class="tab-btn">ארכיון תוצאות</button>
+        </nav>
+
+        <main id="drawView" class="view active">
+            <h2>הוספת שחקנים</h2>
+            <div class="input-area">
+                <input type="text" id="playerNameInput" placeholder="הכנס שם שחקן...">
+                <button id="addPlayerBtn">הכנס</button>
+            </div>
+            <div class="player-list" id="playerList"></div>
+            <div id="playerCount" class="player-count-display">שחקנים: 0</div>
+
+            <div class="controls">
+                <h2>הגדרות הגרלה</h2>
+                <div class="control-group">
+                    <label for="groupSizeSelect">גודל קבוצה:</label>
+                    <select id="groupSizeSelect">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button id="drawTeamsBtn" class="action-btn">הגרל קבוצות</button>
+                <button id="resetBtn" class="danger-btn">התחל מחדש</button>
+            </div>
+
+            <div class="results-area" id="resultsArea"></div>
+
+            <div id="saveResultArea" class="save-result-area hidden">
+                <h2>רישום תוצאה</h2>
+                <div class="control-group">
+                    <label for="winningTeamInput">מספר קבוצה מנצחת:</label>
+                    <input type="number" id="winningTeamInput" min="1">
+                </div>
+                <button id="saveResultBtn" class="action-btn">שמור תוצאה</button>
+            </div>
+        </main>
+
+        <main id="archiveView" class="view">
+            <div class="archive-header">
+                <h2>ארכיון משחקים</h2>
+                <button id="exportTodayBtn" class="export-btn">⬇️ ייצוא תוצאות של היום</button>
+            </div>
+            <div id="archiveContainer">
+                </div>
+        </main>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <p id="modalText"></p>
+            <div class="modal-buttons">
+                <button id="confirmBtn" class="action-btn">המשך</button>
+                <button id="cancelBtn" class="secondary-btn">חזור</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
